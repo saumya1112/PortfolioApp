@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!-- Major Color and also on Toolbar    -->
+    <color name="colorPrimary">#2196F3</color>
+    <!-- Almost always a darker version of Primary and also on Status Bar   -->
+    <color name="colorPrimaryDark">#1976D2</color>
+    <!-- Usually complimentary to Primary   -->
+    <color name="colorAccent">#FF9800</color>
 </resources>
