@@ -6,17 +6,19 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
+import io.github.abhishek.portfolioapp.databinding.ActivityMainBinding;
+import io.github.abhishek.portfolioapp.models.Course;
+import io.github.abhishek.portfolioapp.models.Education;
 import io.github.abhishek.portfolioapp.models.Portfolio;
 
 public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
     public static final int REQUEST_DETAILS_CODE = 1337;
     private static final String TAG = MainActivity.class.getSimpleName();
     private String githubUserName = null;
@@ -24,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        FloatingActionButton addDetailsButton = findViewById(R.id.btn_add_details);
-        addDetailsButton.setOnClickListener(new View.OnClickListener() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        initSampleData();
+        binding.btnAddDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                Portfolio portfolio = binding.getPortfolio();
+                intent.putExtra(AddActivity.PARAM_PORTFOLIO, portfolio);
                 startActivityForResult(intent, REQUEST_DETAILS_CODE);
             }
         });
@@ -67,26 +70,21 @@ public class MainActivity extends AppCompatActivity {
         // First we check by printing Portfolio
         Log.i(TAG, String.valueOf(portfolio));
 
-        // Then we set the data to appropriate fields
-        TextView textViewName = findViewById(R.id.tv_name);
-        TextView textViewPosition = findViewById(R.id.tv_title);
-        TextView textViewEducationTitle = findViewById(R.id.tv_education_title);
-        TextView textViewEducationDegree = findViewById(R.id.tv_education_degree);
-        TextView textViewEducationYear = findViewById(R.id.tv_education_year);
-        TextView textViewCourseTitle = findViewById(R.id.tv_course_title);
-        TextView textViewCourseDegree = findViewById(R.id.tv_course_degree);
-        TextView textViewCourseYear = findViewById(R.id.tv_course_year);
-
-        textViewName.setText(portfolio.getName());
-        textViewPosition.setText(portfolio.getPosition());
-        textViewEducationTitle.setText(portfolio.getEducation().getTitle());
-        textViewEducationDegree.setText(portfolio.getEducation().getDegree());
-        textViewEducationYear.setText(portfolio.getEducation().getYear());
-        textViewCourseTitle.setText(portfolio.getCourse().getName());
-        textViewCourseDegree.setText(portfolio.getCourse().getOrganisation());
-        textViewCourseYear.setText(portfolio.getCourse().getYear());
+        // We just need to set the variable
+        binding.setPortfolio(portfolio);
 
         // Set GitHub Username
         githubUserName = portfolio.getGithubUserName();
+    }
+
+    private void initSampleData() {
+        Education education = new Education("College/University Name    ",
+                "Degree", "Year");
+
+        Course course = new Course("Organisation", "Course Name", "Year");
+
+        Portfolio portfolio = new Portfolio("Name", "Position",
+                education, course, "AbhishekChd");
+        binding.setPortfolio(portfolio);
     }
 }

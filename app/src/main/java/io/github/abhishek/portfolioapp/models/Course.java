@@ -3,37 +3,15 @@ package io.github.abhishek.portfolioapp.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class Course implements Parcelable {
     private String organisation;
     private String name;
     private String year;
-
-    public Course(String organisation, String name, String year) {
-        this.organisation = organisation;
-        this.name = name;
-        this.year = year;
-    }
-
-    public String getOrganisation() {
-        return organisation;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    @Override
-    public String toString() {
-        return "Course{" +
-                "organisation='" + organisation + '\'' +
-                ", name='" + name + '\'' +
-                ", year='" + year + '\'' +
-                '}';
-    }
 
     @Override
     public int describeContents() {

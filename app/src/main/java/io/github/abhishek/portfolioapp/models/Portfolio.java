@@ -3,51 +3,18 @@ package io.github.abhishek.portfolioapp.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+@Data
+@AllArgsConstructor
 public class Portfolio implements Parcelable {
     private String name;
     private String position;
     private Education education;
     private Course course;
     private String githubUserName;
-
-    public Portfolio(String name, String position, Education education, Course course, String githubUserName) {
-        this.name = name;
-        this.position = position;
-        this.education = education;
-        this.course = course;
-        this.githubUserName = githubUserName;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public Education getEducation() {
-        return education;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public String getGithubUserName() {
-        return githubUserName;
-    }
-
-    @Override
-    public String toString() {
-        return "Portfolio{" +
-                "firstName='" + name + '\'' +
-                ", position='" + position + '\'' +
-                ", education=" + education +
-                ", course=" + course +
-                ", githubUserName='" + githubUserName + '\'' +
-                '}';
-    }
 
     @Override
     public int describeContents() {

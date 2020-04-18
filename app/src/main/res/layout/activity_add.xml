@@ -1,181 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
 
+    <data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+        <variable
+            name="portfolio"
+            type="io.github.abhishek.portfolioapp.models.Portfolio" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/cardview_compat_inset_shadow"
-        tools:context=".AddActivity"
-        tools:ignore="HardcodedText,Autofill">
+        android:layout_height="match_parent">
 
 
-        <TextView
-            android:id="@+id/tv_main_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Enter Name and Position"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_education_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Enter Education"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_title" />
-
-        <EditText
-            android:id="@+id/et_education_university"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter University Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/tv_education_label"
-            app:layout_constraintStart_toStartOf="@+id/tv_education_label"
-            app:layout_constraintTop_toBottomOf="@+id/tv_education_label" />
-
-        <EditText
-            android:id="@+id/et_education_degree"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Degree"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/tv_education_label"
-            app:layout_constraintStart_toStartOf="@+id/tv_education_label"
-            app:layout_constraintTop_toBottomOf="@+id/et_education_university" />
-
-        <EditText
-            android:id="@+id/et_education_year"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Year"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/et_education_degree"
-            app:layout_constraintStart_toStartOf="@+id/et_education_degree"
-            app:layout_constraintTop_toBottomOf="@+id/et_education_degree" />
-
-        <TextView
-            android:id="@+id/tv_course_label"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Enter Course"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_education_year" />
-
-        <EditText
-            android:id="@+id/et_course_organisation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Organisation Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/tv_course_label"
-            app:layout_constraintStart_toStartOf="@+id/tv_course_label"
-            app:layout_constraintTop_toBottomOf="@+id/tv_course_label" />
-
-        <EditText
-            android:id="@+id/et_course_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Course Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/tv_course_label"
-            app:layout_constraintStart_toStartOf="@+id/tv_course_label"
-            app:layout_constraintTop_toBottomOf="@+id/et_course_organisation" />
-
-        <EditText
-            android:id="@+id/et_course_year"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Year"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/et_course_title"
-            app:layout_constraintStart_toStartOf="@+id/et_course_title"
-            app:layout_constraintTop_toBottomOf="@+id/et_course_title" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_compat_inset_shadow"
+            tools:context=".AddActivity"
+            tools:ignore="HardcodedText,Autofill">
 
 
-        <EditText
-            android:id="@+id/et_github"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:ems="10"
-            android:hint="Enter GitHub username"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/et_course_title"
-            app:layout_constraintStart_toStartOf="@+id/et_course_title"
-            app:layout_constraintTop_toBottomOf="@+id/et_course_year" />
+            <TextView
+                android:id="@+id/tv_main_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Enter Name and Position"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@color/colorPrimary"
-            android:onClick="submitData"
-            android:text="Submit"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/et_github"
-            app:layout_constraintStart_toStartOf="@+id/et_github"
-            app:layout_constraintTop_toBottomOf="@+id/et_github" />
+            <TextView
+                android:id="@+id/tv_education_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Enter Education"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_title" />
 
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/tv_main_label"
-            app:layout_constraintStart_toStartOf="@+id/tv_main_label"
-            app:layout_constraintTop_toBottomOf="@+id/tv_main_label" />
+            <EditText
+                android:id="@+id/et_education_university"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter University Name"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.education.title}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_education_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_education_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_education_label" />
 
-        <EditText
-            android:id="@+id/et_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Enter Position"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/tv_main_label"
-            app:layout_constraintStart_toStartOf="@+id/tv_main_label"
-            app:layout_constraintTop_toBottomOf="@+id/et_name" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <EditText
+                android:id="@+id/et_education_degree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Degree"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.education.degree}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_education_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_education_label"
+                app:layout_constraintTop_toBottomOf="@+id/et_education_university" />
+
+            <EditText
+                android:id="@+id/et_education_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Year"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.education.year}"
+                app:layout_constraintEnd_toEndOf="@+id/et_education_degree"
+                app:layout_constraintStart_toStartOf="@+id/et_education_degree"
+                app:layout_constraintTop_toBottomOf="@+id/et_education_degree" />
+
+            <TextView
+                android:id="@+id/tv_course_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Enter Course"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_education_year" />
+
+            <EditText
+                android:id="@+id/et_course_organisation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Organisation Name"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.course.organisation}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_course_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_course_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_course_label" />
+
+            <EditText
+                android:id="@+id/et_course_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Course Name"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.course.name}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_course_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_course_label"
+                app:layout_constraintTop_toBottomOf="@+id/et_course_organisation" />
+
+            <EditText
+                android:id="@+id/et_course_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Year"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.course.year}"
+                app:layout_constraintEnd_toEndOf="@+id/et_course_title"
+                app:layout_constraintStart_toStartOf="@+id/et_course_title"
+                app:layout_constraintTop_toBottomOf="@+id/et_course_title" />
+
+
+            <EditText
+                android:id="@+id/et_github"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="Enter GitHub username"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.githubUserName}"
+                app:layout_constraintEnd_toEndOf="@+id/et_course_title"
+                app:layout_constraintStart_toStartOf="@+id/et_course_title"
+                app:layout_constraintTop_toBottomOf="@+id/et_course_year" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@color/colorPrimary"
+                android:onClick="submitData"
+                android:text="Submit"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/et_github"
+                app:layout_constraintStart_toStartOf="@+id/et_github"
+                app:layout_constraintTop_toBottomOf="@+id/et_github" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Name"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.name}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_main_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_main_label"
+                app:layout_constraintTop_toBottomOf="@+id/tv_main_label" />
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Enter Position"
+                android:inputType="textPersonName"
+                android:text="@{portfolio.position}"
+                app:layout_constraintEnd_toEndOf="@+id/tv_main_label"
+                app:layout_constraintStart_toStartOf="@+id/tv_main_label"
+                app:layout_constraintTop_toBottomOf="@+id/et_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
